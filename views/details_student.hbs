@@ -1,0 +1,21 @@
+{{>breadcrumb}}
+<h1>{{title}}</h1>
+
+<div class="card" style="width: 20rem;">
+<div class="card-body">
+    <h5 class="card-title">{{aluno.nome}}</h5>
+    <h6>{{aluno.email}}</h6>
+    <p class="card-text"><em>(Campo opicional) Espaço reservado para colocar uma breve descrição do aluno.</em></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Número da Matrícula: {{aluno.matricula}}</li>
+    <li class="list-group-item">Data de Nascimento: {{aluno.data_nascimento}}</li>
+    <li class="list-group-item">E-mail: {{aluno.email}}</li>
+  </ul>
+<div class="card">
+    <a href="/alunos/edit/{{aluno.matricula}}" class="card-link">Editar<i class="bi bi-pencil-square"></i></a>
+    <form action="/alunos/{{aluno.matricula}}"method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit" class="btn btn-danger" id="submit" ><i class="bi bi-trash"></i>Remover</button>
+    </form>
+</div>
