@@ -7,10 +7,14 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 
 var indexRouter = require('./routes/index');
+
 var alunosRouter = require('./routes/controllers/alunos');
+var acoesEducacionaisRouter = require('./routes/controllers/acoes-educacionais');
+
 var usersRouter = require('./routes/users');
 
 var apiAlunosRouter = require('./routes/apis/api-alunos');
+var apiAcoesEducacionaisRouter = require('./routes/apis/api-acoes-educacionais');
 
 var httpMethodOverrider = require('./middlewares/http-method-overrider');
 
@@ -41,7 +45,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/alunos', alunosRouter);
+app.use('/acoeseducacionais', acoesEducacionaisRouter);
+
 app.use('/api/v1/alunos', apiAlunosRouter);
+app.use('/api/v1/acoeseducacionais', apiAcoesEducacionaisRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

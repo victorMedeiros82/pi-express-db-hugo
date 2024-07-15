@@ -1,0 +1,37 @@
+<h1>{{title}}</h1>
+<form action="/alunos/{{parametro}}"method="POST">
+<input type="hidden" name="_method" value="{{metodo}}">
+
+<div class="mb-3">
+<label  class="form-label">Matrícula</label>
+<input type="number" name="matricula" class="form-control" value="{{aluno.matricula}}">
+</div>
+
+<div class="mb-3">
+<label  class="form-label">Nome</label>
+<input type="text" name="nome" class="form-control" value="{{aluno.nome}}">
+</div>
+
+<div class="mb-3">
+<label  class="form-label">Data de Nacimento</label>
+<input type="date" name="data_nascimento" class="form-control" value="{{aluno.data_nascimento}}">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Endereço de Email</label>
+<input type="email" name="email" class="form-control" value="{{aluno.email}}">
+</div>
+
+<input type="submit" id="submit" class="btn btn-outline-primary" value="{{buttonText}}" >
+
+
+<select class="form-select" aria-label="Default select example">
+  <option selected>Selecione uma Ação</option>
+  <option value="{{acao_educacional.descricao_acao}}">Adaptação do ambiente físico</option>
+  <option value="{{acao_educacional.descricao_acao}}">Avaliação diferenciada</option>
+  <option value="{{acao_educacional.descricao_acao}}">Permissão de pausas durante a prova</option>
+  <option value="{{acao_educacional.descricao_acao}}">Prorrogação do tempo de integralização do curso</option>
+  <option value="{{acao_educacional.descricao_acao}}">Tempo adicional de prova</option>
+</select>
+
+</form>
