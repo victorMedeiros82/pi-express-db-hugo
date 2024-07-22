@@ -7,12 +7,12 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 
 var indexRouter = require('./routes/index');
-
+//controllers
 var alunosRouter = require('./routes/controllers/alunos');
 var acoesEducacionaisRouter = require('./routes/controllers/acoes-educacionais');
 
 var usersRouter = require('./routes/users');
-
+//rotas api
 var apiAlunosRouter = require('./routes/apis/api-alunos');
 var apiAcoesEducacionaisRouter = require('./routes/apis/api-acoes-educacionais');
 
@@ -51,12 +51,12 @@ app.use('/api/v1/alunos', apiAlunosRouter);
 app.use('/api/v1/acoeseducacionais', apiAcoesEducacionaisRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
